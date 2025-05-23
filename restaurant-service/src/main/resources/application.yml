@@ -1,0 +1,24 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: restaurant
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: food_order
+    password: root
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        hbm2ddl:
+          auto: update
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true

@@ -1,0 +1,30 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: user
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: food_order_db
+    password: root
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        hbm2ddl:
+          auto: update
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+jwt:
+  secret-key: a4a93a9a13d592e2e088727726900b704afeb992940965810dcf29125c8caabe6fc4a3357766036237a188885f5948a92de98f80c6fee348c7d201b23a77448333efe14ac26576cdf56b3b547752d35ea5dab364d37aa82f593dea2c49cd359e2c9795cc5cb317d8602e0120d015907ef3627fd6dfa0c3d575a6ef53655d64a85a817ceeee93265e35d8d45cdc414b0f28db6273c19fda5c604adc80698c2996317a9620e1bebb931663702bcc3930062e871da10f5387c4e7ca0acf652bb02b5c7e01876766d88ec9efcd12b7c1d99f8fe7cb5b901ab82c1ec79fd3bc340bbf44f123affff5dd7332724335ea94324070bbc422a5b7a42b171c9de0136a8a9e
+  expiration: 1800000
+  refresh-expiration: 604800000

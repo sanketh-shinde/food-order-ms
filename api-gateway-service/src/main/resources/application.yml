@@ -1,0 +1,44 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - http://localhost:3000
+            allowedHeaders: "*"
+            allowedMethods:
+              - OPTIONS
+              - POST
+              - GET
+              - PUT
+              - PATCH
+              - DELETE
+            allowCredentials: true
+      routes:
+        - id: eureka
+          uri: http://localhost:8761
+          predicates:
+            - Path=/eureka/**
+
+        - id: user
+          uri: lb://user
+          predicates:
+            - Path=/auth/**, /users/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway, health
