@@ -18,6 +18,9 @@ import java.util.Set;
         uniqueConstraints = {
                 @UniqueConstraint(name = "uk_email", columnNames = "email"),
                 @UniqueConstraint(name = "uk_phone_number", columnNames = "phone_number")
+        },
+        indexes = {
+                @Index(name = "idx_email", columnList = "email")
         }
 )
 @Data
@@ -26,8 +29,7 @@ import java.util.Set;
 public class User {
 
     @Id
-    @SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)

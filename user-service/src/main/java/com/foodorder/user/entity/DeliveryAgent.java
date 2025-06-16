@@ -18,8 +18,7 @@ import lombok.NoArgsConstructor;
 public class DeliveryAgent {
 
     @Id
-    @SequenceGenerator(name = "delivery_agent_seq", sequenceName = "delivery_agent_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "delivery_agent_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

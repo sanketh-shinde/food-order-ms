@@ -4,11 +4,12 @@ server:
 spring:
   application:
     name: notification
+
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:xe
+    url: jdbc:mysql://localhost:3306/food_order_db
     username: food_order
     password: root
-    driver-class-name: oracle.jdbc.OracleDriver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     properties:
@@ -17,6 +18,12 @@ spring:
         highlight_sql: true
         hbm2ddl:
           auto: update
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:

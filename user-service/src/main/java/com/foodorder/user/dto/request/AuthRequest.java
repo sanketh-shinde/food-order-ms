@@ -1,4 +1,4 @@
-package com.foodorder.user.request;
+package com.foodorder.user.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

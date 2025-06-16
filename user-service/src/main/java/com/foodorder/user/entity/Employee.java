@@ -15,8 +15,7 @@ import lombok.NoArgsConstructor;
 public class Employee {
 
     @Id
-    @SequenceGenerator(name = "employee_seq", sequenceName = "employee_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

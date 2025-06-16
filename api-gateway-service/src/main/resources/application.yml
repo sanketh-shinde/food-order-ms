@@ -7,30 +7,33 @@ spring:
 
   cloud:
     gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins:
-              - http://localhost:3000
-            allowedHeaders: "*"
-            allowedMethods:
-              - OPTIONS
-              - POST
-              - GET
-              - PUT
-              - PATCH
-              - DELETE
-            allowCredentials: true
-      routes:
-        - id: eureka
-          uri: http://localhost:8761
-          predicates:
-            - Path=/eureka/**
+      server:
+        webflux:
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - http://localhost:3000
+                allowedHeaders: "*"
+                allowedMethods:
+                  - OPTIONS
+                  - POST
+                  - GET
+                  - PUT
+                  - PATCH
+                  - DELETE
+                allowCredentials: true
 
-        - id: user
-          uri: lb://user
-          predicates:
-            - Path=/auth/**, /users/**
+        routes:
+          - id: eureka
+            uri: http://localhost:8761
+            predicates:
+              - Path=/eureka/**
+
+          - id: user
+            uri: lb://user
+            predicates:
+              - Path=/auth/**, /users/**
 
 eureka:
   client:

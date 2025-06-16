@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 public class RestaurantAdmin {
 
     @Id
-    @SequenceGenerator(name = "restaurant_admin_seq", sequenceName = "restaurant_admin_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "restaurant_admin_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

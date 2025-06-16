@@ -5,7 +5,7 @@ import com.foodorder.user.dto.request.*;
 import com.foodorder.user.entity.*;
 import com.foodorder.user.mapper.UserMapper;
 import com.foodorder.user.repository.*;
-import com.foodorder.user.response.Response;
+import com.foodorder.user.dto.response.Response;
 import com.foodorder.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;

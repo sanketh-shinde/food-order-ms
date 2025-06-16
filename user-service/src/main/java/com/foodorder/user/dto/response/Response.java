@@ -1,4 +1,4 @@
-package com.foodorder.user.response;
+package com.foodorder.user.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

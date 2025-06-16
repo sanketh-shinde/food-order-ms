@@ -1,8 +1,8 @@
 package com.foodorder.user.service;
 
 import com.foodorder.user.constants.Role;
-import com.foodorder.user.request.AuthRequest;
-import com.foodorder.user.response.Response;
+import com.foodorder.user.dto.request.AuthRequest;
+import com.foodorder.user.dto.response.Response;
 
 public interface AuthService {
 

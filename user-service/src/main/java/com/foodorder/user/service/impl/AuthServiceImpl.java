@@ -5,8 +5,8 @@ import com.foodorder.user.entity.User;
 import com.foodorder.user.jwt.JwtUtil;
 import com.foodorder.user.mapper.UserMapper;
 import com.foodorder.user.repository.*;
-import com.foodorder.user.request.AuthRequest;
-import com.foodorder.user.response.Response;
+import com.foodorder.user.dto.request.AuthRequest;
+import com.foodorder.user.dto.response.Response;
 import com.foodorder.user.service.AuthService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import static com.foodorder.user.constants.ConfigurationConstants.*;
 

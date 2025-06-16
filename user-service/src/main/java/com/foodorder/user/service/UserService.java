@@ -4,7 +4,7 @@ import com.foodorder.user.dto.request.CustomerRegistrationRequest;
 import com.foodorder.user.dto.request.DeliveryAgentRegistrationRequest;
 import com.foodorder.user.dto.request.EmployeeRegistrationRequest;
 import com.foodorder.user.dto.request.RestaurantAdminRegistrationRequest;
-import com.foodorder.user.response.Response;
+import com.foodorder.user.dto.response.Response;
 
 public interface UserService {
 

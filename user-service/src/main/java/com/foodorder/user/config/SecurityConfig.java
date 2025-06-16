@@ -3,7 +3,7 @@ package com.foodorder.user.config;
 import com.foodorder.user.jwt.JwtFilter;
 import com.foodorder.user.jwt.JwtUtil;
 import com.foodorder.user.repository.UserRepository;
-import com.foodorder.user.service.UserDetail;
+import com.foodorder.user.service.impl.UserDetailsImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -39,7 +39,8 @@ public class SecurityConfig {
             "/configuration/security",
             "/swagger-ui/**",
             "/webjars/**",
-            "/swagger-ui.html"
+            "/swagger-ui.html",
+            "/users/register/update/{id}"
     };
 
     private final JwtUtil jwtUtil;
@@ -85,7 +86,7 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         return email -> userRepository.findByEmail(email)
-                .map(UserDetail::new)
+                .map(UserDetailsImpl::new)
                 .orElseThrow(() -> new UsernameNotFoundException(USER_NOT_FOUND));
     }
 
